@@ -1,0 +1,57 @@
+<html>
+<script>
+const animals=[
+    {
+        name:"dog",
+        weight:20,
+        size:"small"
+    },
+    {
+        name:"tiger",
+        weight:50,
+        size:"big"
+    },
+    {
+        name:"cat",
+        weight:10,
+        size:"small"
+    },
+
+];
+    function getAnimalNames() {
+        let animal_names=animals.map((animal,index,animals)=>{
+    document.write(animal.name);
+    })
+
+}
+function getSmallAnimals()
+{
+    let small_animals=animals.filter((animal)=>
+    
+    {
+        if(animal.size=="small")
+        {
+            document.write(animal.name);
+        }
+    }
+    )
+}
+function getTotalWeight()
+{   
+    //let weight=0;
+     let total_weight=0;
+    total_weight=animals.reduce((weight,animal,index,animals)=>
+    {
+        debugger
+        return total_weight=total_weight+animal.weight;
+       
+    },0);
+     document.write(total_weight);
+}
+
+
+</script>
+<button onclick="getAnimalNames()">GET ANIMAL NAMES</button>
+<button onclick="getSmallAnimals()">GET SMALL ANIMAL NAMES</button>
+<button onclick="getTotalWeight()">GET TOTAL WEIGHT</button>
+</html>

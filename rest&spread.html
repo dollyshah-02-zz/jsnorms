@@ -1,0 +1,61 @@
+<html>
+<script>
+    //rest operator
+    const obj={a:1,b:2,c:3};
+    document.write(obj);
+    document.write("<br>");
+    const{a,...rest}=obj;
+    document.write(obj.a);
+    document.write("<br>");
+    document.write(obj.b);
+    document.write("<br>");
+    document.write(obj.c);
+    document.write("<br>");
+    document.write(rest.a);//undefined
+    document.write("<br>");
+    document.write(rest.b);
+    document.write("<br>");
+    document.write(rest.c);
+    document.write("<br>");
+    document.write(Object.values(obj));
+    document.write("<br>");
+    document.write(Object.values(rest));
+    document.write("<br>");
+
+    function multiply(x,y,...rest) {
+        let multiply=1*x*y;
+        for (let rst of rest) { multiply *= rst; }
+        
+        document.write("multiplication="+multiply);
+        document.write("<br>");
+
+        
+    }
+    multiply(2,3,4,5);
+    multiply(3,6);
+
+
+    //spread operator
+
+    const obj1={m:10,n:20,o:30};
+    document.write("<br>");
+    document.write(Object.values(obj1));
+    const obj2= {...obj1,p:40}
+    document.write("<br>");
+    document.write("After adding p,now obj1 is: "+ Object.values(obj2));
+
+    //merged object
+
+    const merged={...obj,...obj2};
+    document.write("</br>");
+    document.write("Merged objects: "+Object.values(merged));
+
+
+
+
+
+
+
+
+</script>
+</html>
